@@ -6,13 +6,13 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def new_announcement_view(request):
-    return render_to_response("newannounce.html",
+def new_scholarship_view(request):
+    return render_to_response("newscholarship.html",
                               locals(),
                               context_instance=RequestContext(request))
 
 
-def announcement_view(request):
-    return render_to_response("announcements.html",
+def scholarship_view(request):
+    return render_to_response("scholarships.html",
                               locals(),
                               context_instance=RequestContext(request))

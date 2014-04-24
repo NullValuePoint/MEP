@@ -6,8 +6,13 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required
-def new_event(request):
-    return render_to_response("newannounce.html",
+def new_event_view(request):
+    return render_to_response("newevent.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+def event_view(request):
+    return render_to_response("events.html",
                               locals(),
                               context_instance=RequestContext(request))
