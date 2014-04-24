@@ -10,6 +10,9 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', 'mepapp.views.logout_view', name='logout'),
+    url(r'^about/', 'mepapp.views.about', name='about'),
+    url(r'^announcements/', 'announcement.views.announcements', name='announcements'),
+    url(r'^$/', 'announcements.views.new', name='new_announcement'),
     url(r'^$', 'mepapp.views.home', name='home'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     

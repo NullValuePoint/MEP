@@ -29,11 +29,34 @@
           </button>
         <div class="collapse navbar-collapse navHeaderCollapse">
           <ul class="nav navbar-nav navbar-right">
+            <li class="divider"></li>
             {% if user.is_authenticated %}
-              <li><a href="#">{{ user.first_name }}</a></li></li>
+              <li><a href="#">Welcome {{ user.first_name }}!</a></li>
+            {% endif %}
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li class="divider"></li>
+            <li><a href="about">About Us</a></li>
+            
+            {% if user.is_authenticated %}
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">New Event</a></li>
+                    <li><a href="new_announcement">New Announcement</a></li>
+                    <li><a href="#">New Scholarship</a></li>
+                    <li><a href="#">New Internship</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Reports</li>
+                    <li><a href="#">Weekly Summary</a></li>
+                  </ul>
+                </li>
               <li>
                 <a href="logout">
                   <button type="button" class="btn btn-warning btn-xs">
+                    <span class="glyphicon glyphicon-user"></span>
                     Sign out
                   </button>
                 </a>
@@ -42,24 +65,19 @@
               <li>
                 <a href="{% url 'social:begin' 'linkedin-oauth2' %}">
                   <button type="button" class="btn btn-success btn-xs">
+                    <span class="glyphicon glyphicon-user"></span>
                     Sign In
                   </button>
                 </a>
               </li>
             {% endif %}
-            <li class="divider"></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Announcements</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Scholarships</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About Us</a></li>
+            
           </ul>
         </div>
       </div>
     </nav>
     
-    {% block carousel %} {% endblock %}
+    {% block main %} {% endblock %}
     {% block content %} {% endblock %}
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

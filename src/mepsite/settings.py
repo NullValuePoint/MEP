@@ -25,7 +25,6 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [('id', 'id'),
                                           ('headline', 'headline'),
                                           ('industry', 'industry')]
 AUTHENTICATION_BACKENDS = (
-    'social.backends.linkedin.LinkedinOAuth',
     'social.backends.linkedin.LinkedinOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -49,7 +48,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.user_details'
 )
 SOCIAL_AUTH_DISCONNECT_PIPELINE = (
-        #'social.pipeline.disconnect.allowed_to_disconnect',
         'social.pipeline.disconnect.get_entries',
         'social.pipeline.disconnect.revoke_tokens',
         'social.pipeline.disconnect.disconnect.disconnect',
@@ -73,7 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'mepapp',
-    #'mep_django.linkedin',
+    'announcement',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
