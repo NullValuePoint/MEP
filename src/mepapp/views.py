@@ -23,7 +23,6 @@ def home(request):
                                 },
                               context_instance=RequestContext(request))
 
-
 @login_required
 def logout_view(request):
     logout(request)
@@ -31,8 +30,41 @@ def logout_view(request):
                               locals(),
                               context_instance=RequestContext(request))
 
-
 def about(request):
     return render_to_response("about.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+def new_scholarship_view(request):
+    return render_to_response("newscholarship.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+def scholarship_view(request):
+    return render_to_response("scholarships.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def new_event_view(request):
+    return render_to_response("newevent.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+def event_view(request):
+    return render_to_response("events.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def new_announcement_view(request):
+    return render_to_response("newannounce.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+def announcement_view(request):
+    return render_to_response("announcements.html",
                               locals(),
                               context_instance=RequestContext(request))
